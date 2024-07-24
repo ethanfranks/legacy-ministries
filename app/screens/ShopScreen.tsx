@@ -5,15 +5,13 @@ import {
   Text,
 } from "app/components"
 // import { isRTL } from "../i18n"
-import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
 import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
+import { MainTabScreenProps } from "app/navigators/MainTabNavigator"
 
 // const welcomeFace = require("../../assets/images/welcome-face.png")
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
-
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
+export const ShopScreen: FC<MainTabScreenProps<"Shop">> = observer(function ShopScreen(
 ) {
 
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
@@ -22,16 +20,14 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
     <View style={$container}>
       <View style={$topContainer}>
         <Text
-          testID="welcome-heading"
+          testID="shop-heading"
           style={$welcomeHeading}
-          tx="welcomeScreen.helloWorld"
+          tx="shopScreen.heading"
           preset="heading"
         />
-        <Text tx="welcomeScreen.exciting" preset="subheading" />
       </View>
 
       <View style={[$bottomContainer, $bottomContainerInsets]}>
-        <Text tx="welcomeScreen.postscript" size="md" />
       </View>
     </View>
   )

@@ -81,4 +81,12 @@ export const colors = {
    *
    */
   errorBackground: palette.angry100,
+  legacy: {
+    orange: {
+      medium: "#f7941d",
+      dark: "#f47a20",
+    },
+    red: "#9f2854",
+    yellow: "#ffd170",
+  }
 }
