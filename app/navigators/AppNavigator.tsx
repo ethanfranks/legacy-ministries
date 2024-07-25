@@ -9,7 +9,6 @@ import { createNativeStackNavigator, NativeStackScreenProps } from "@react-navig
 import { observer } from "mobx-react-lite"
 import React from "react"
 import { useColorScheme } from "react-native"
-// import * as Screens from "app/screens"
 import Config from "../config"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 import { colors } from "app/theme"
@@ -29,11 +28,7 @@ import { MainTabNavigator } from "./MainTabNavigator"
  *   https://reactnavigation.org/docs/typescript/#organizing-types
  */
 export type AppStackParamList = {
-  About: undefined
-  Account: undefined
-  Cart: undefined
-  Shop: undefined
-  BottomNav: undefined
+  MainTabNavigator: undefined
   // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
 }
 
@@ -54,8 +49,7 @@ const Stack = createNativeStackNavigator<AppStackParamList>()
 const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, navigationBarColor: colors.background }}>
-      {/* <Stack.Screen name="About" component={Screens.AboutScreen} /> */}
-      <Stack.Screen name="BottomNav" component={MainTabNavigator} />
+      <Stack.Screen name="MainTabNavigator" component={MainTabNavigator} />
       {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
     </Stack.Navigator>
   )

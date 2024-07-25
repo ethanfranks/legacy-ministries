@@ -5,7 +5,7 @@ import { TextStyle, ViewStyle } from "react-native"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { Icon } from "../components"
 import { translate } from "../i18n"
-import { AboutScreen, AccountScreen, CartScreen, ShopScreen } from "../screens"
+import { AboutScreen, AccountScreen, CartScreen, DonateScreen, ShopScreen } from "../screens"
 import { colors, spacing, typography } from "../theme"
 import { AppStackParamList, AppStackScreenProps } from "./AppNavigator"
 
@@ -13,6 +13,7 @@ export type MainTabParamList = {
   About: undefined
   Account: undefined
   Cart: undefined
+  Donate: undefined
   Shop: undefined
 }
 
@@ -62,11 +63,21 @@ export function MainTabNavigator() {
       />
 
       <Tab.Screen
+        name="Donate"
+        component={DonateScreen}
+        options={{
+          tabBarLabel: translate("navigator.donateTab"),
+          tabBarIcon: ({ focused }) => (
+            <Icon icon="give" color={focused ? undefined : colors.text} size={40} />
+          ),
+        }}
+      />
+      
+      <Tab.Screen
         name="Shop"
         component={ShopScreen}
         options={{
           tabBarLabel: translate("navigator.shopTab"),
-          // tabBarLabelStyle: { color: focused ? colors.legacy.red : colors.text },
           tabBarIcon: ({ focused }) => (
             <Icon icon="shoppingTag" color={focused ? undefined : colors.text} size={35} />
           ),
@@ -100,7 +111,8 @@ export function MainTabNavigator() {
 
 const $tabBar: ViewStyle = {
   backgroundColor: colors.background,
-  borderTopColor: colors.transparent,
+  borderTopColor: colors.palette.neutral300,
+  borderTopWidth: 1,
 }
 
 const $tabBarItem: ViewStyle = {

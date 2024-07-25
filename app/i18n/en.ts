@@ -1,17 +1,24 @@
 const en = {
   aboutScreen: {
-    heading: "ABOUT",
+    heading: "LEGACY WORKS",
+    subheading: "this page is still under construction..."
   },
   accountScreen: {
     heading: "ACCOUNT",
+    subheading: "this page is still under construction..."
   },
   cartScreen: {
     heading: "CART",
+    subheading: "this page is still under construction..."
   },
   common: {
     ok: "OK!",
     cancel: "Cancel",
     back: "Back",
+  },
+  donateScreen: {
+    heading: "DONATE",
+    subheading: "this page is still under construction..."
   },
   emptyStateComponent: {
     generic: {
@@ -30,10 +37,13 @@ const en = {
     aboutTab: "About",
     accountTab: "Account",
     cartTab: "Cart",
+    donateTab: "Donate",
     shopTab: "Shop",
+    supportTab: "Support",
   },
   shopScreen: {
     heading: "SHOP",
+    subheading: "this page is still under construction..."
   },
 }
 

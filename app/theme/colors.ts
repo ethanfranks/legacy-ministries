@@ -59,7 +59,7 @@ export const colors = {
   /**
    * The default color of the screen background.
    */
-  background: palette.neutral200,
+  background: palette.neutral100,
   /**
    * The default border color.
    */
@@ -83,10 +83,13 @@ export const colors = {
   errorBackground: palette.angry100,
   legacy: {
     orange: {
-      medium: "#f7941d",
+      light: "#f7941d",
       dark: "#f47a20",
     },
     red: "#9f2854",
-    yellow: "#ffd170",
-  }
+    yellow: {
+      light: "#ffd170",
+      dark: "#ffb914",
+    },
+  },
 }

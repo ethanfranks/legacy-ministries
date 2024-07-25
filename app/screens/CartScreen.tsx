@@ -1,62 +1,32 @@
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
-import { TextStyle, View, ViewStyle } from "react-native"
-import {
-  Text,
-} from "app/components"
-// import { isRTL } from "../i18n"
+import { SafeAreaView, TextStyle, View, ViewStyle } from "react-native"
+import { Text } from "app/components"
 import { colors, spacing } from "../theme"
-import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 import { MainTabScreenProps } from "app/navigators/MainTabNavigator"
 
-// const welcomeFace = require("../../assets/images/welcome-face.png")
-
-export const CartScreen: FC<MainTabScreenProps<"Cart">> = observer(function CartScreen(
-) {
-
-  const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
+export const CartScreen: FC<MainTabScreenProps<"Cart">> = observer(function CartScreen() {
 
   return (
     <View style={$container}>
-      <View style={$topContainer}>
+      <SafeAreaView>
+        <Text testID="cart-heading" style={$marginLg} tx="cartScreen.heading" preset="heading" />
         <Text
-          testID="cart-heading"
-          style={$welcomeHeading}
-          tx="cartScreen.heading"
-          preset="heading"
+          testID="cart-subheading"
+          style={$marginLg}
+          tx="cartScreen.subheading"
+          preset="subheading"
         />
-      </View>
-
-      <View style={[$bottomContainer, $bottomContainerInsets]}>
-      </View>
+      </SafeAreaView>
     </View>
   )
 })
 
+const $marginLg: TextStyle = {
+  margin: spacing.lg,
+}
+
 const $container: ViewStyle = {
   flex: 1,
-  backgroundColor: colors.background,
-}
-
-const $topContainer: ViewStyle = {
-  flexShrink: 1,
-  flexGrow: 1,
-  flexBasis: "57%",
-  justifyContent: "center",
-  paddingHorizontal: spacing.lg,
-}
-
-const $bottomContainer: ViewStyle = {
-  flexShrink: 1,
-  flexGrow: 0,
-  flexBasis: "43%",
   backgroundColor: colors.palette.neutral100,
-  borderTopLeftRadius: 16,
-  borderTopRightRadius: 16,
-  paddingHorizontal: spacing.lg,
-  justifyContent: "space-around",
-}
-
-const $welcomeHeading: TextStyle = {
-  marginBottom: spacing.md,
 }

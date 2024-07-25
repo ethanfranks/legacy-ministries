@@ -92,6 +92,7 @@ export const iconRegistry = {
   caretRight: require("../../assets/icons/caretRight.png"),
   cart: require("../../assets/icons/cart.png"),
   check: require("../../assets/icons/check.png"),
+  give: require("../../assets/icons/give.png"),
   hidden: require("../../assets/icons/hidden.png"),
   legacy: require("../../assets/icons/legacyIconTransparent.png"),
   lock: require("../../assets/icons/lock.png"),
