@@ -92,6 +92,18 @@ export function MainTabNavigator() {
           tabBarIcon: ({ focused }) => (
             <Icon icon="cart" color={focused ? undefined : colors.text} size={40} />
           ),
+          title: translate("cartScreen.heading"),
+          headerShown: true,
+          headerStyle: {
+            backgroundColor: colors.background,
+            borderBottomColor: colors.separator,
+            borderBottomWidth: 1,
+          },
+          headerTintColor: colors.text,
+          headerTitleStyle: {
+            textTransform: 'uppercase',
+            fontWeight: '700',
+          }
         }}
       />
 

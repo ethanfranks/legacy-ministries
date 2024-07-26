@@ -10,7 +10,6 @@ export const CartScreen: FC<MainTabScreenProps<"Cart">> = observer(function Cart
   return (
     <View style={$container}>
       <SafeAreaView>
-        <Text testID="cart-heading" style={$marginLg} tx="cartScreen.heading" preset="heading" />
         <Text
           testID="cart-subheading"
           style={$marginLg}

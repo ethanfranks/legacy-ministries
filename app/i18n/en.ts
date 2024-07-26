@@ -8,7 +8,7 @@ const en = {
     subheading: "this page is still under construction..."
   },
   cartScreen: {
-    heading: "CART",
+    heading: "Cart",
     subheading: "this page is still under construction..."
   },
   common: {
