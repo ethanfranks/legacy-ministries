@@ -13,19 +13,24 @@ import { clear } from "app/utils/storage"
 import { goBack, resetRoot, navigate } from "app/navigators/navigationUtilities"
 
 import { Reactotron } from "./ReactotronClient"
+import { reactotronRedux } from "reactotron-redux"
+import { openInEditor } from "reactotron-react-native"
 
-const reactotron = Reactotron.configure({
+export const reactotron = Reactotron.configure({
   name: require("../../package.json").name,
   onConnect: () => {
     /** since this file gets hot reloaded, let's clear the past logs every time we connect */
     Reactotron.clear()
   },
-}).use(
-  mst({
-    /* ignore some chatty `mobx-state-tree` actions */
-    filter: (event) => /postProcessSnapshot|@APPLY_SNAPSHOT/.test(event.name) === false,
-  }),
-)
+})
+  .use(
+    mst({
+      /* ignore some chatty `mobx-state-tree` actions */
+      filter: (event) => /postProcessSnapshot|@APPLY_SNAPSHOT/.test(event.name) === false,
+    }),
+  )
+  .use(reactotronRedux())
+  .use(openInEditor())
 
 if (Platform.OS !== "web") {
   reactotron.setAsyncStorageHandler?.(AsyncStorage)
